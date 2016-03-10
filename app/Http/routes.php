@@ -27,3 +27,18 @@ Route::post('authentication/postRegister', ['as' => 'postRegister', 'uses' => 'A
 
 Route::get('authentication/getLogin', ['as' => 'getLogin', 'uses' => 'Auth\AuthController@getLogin']);
 Route::post('authentication/postLogin', ['as' => 'postLogin', 'uses' => 'Auth\AuthController@postLogin']);
+Route::resource('search', 'SearchController');
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
+    Route::get('/form', ['as' => 'admin.form', 'uses' => "FormController@index"]);
+    Route::resource('year', 'YearController');
+    Route::resource('season', 'SeasonController');
+    Route::resource('class', 'ClassRoomController');
+    Route::resource('subject', 'SubjectController');
+
+    // Controllers Within The "App\Http\Controllers\Admin" Namespace
+
+    Route::get('/table', ['as' => 'admin.table', 'uses' => "TableController@index"]);
+
+});
+Route::get('admin', 'AdminController@index');

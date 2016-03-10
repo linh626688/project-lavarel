@@ -63,9 +63,9 @@ class AuthController extends Controller
             'password' => $request->password,
         );
         if ($this->auth->attempt($auth)) {
-            echo $this->auth->user()->user;
+            return redirect('admin');
         } else {
-            echo "That Bai";
+            return redirect()->back();
         }
     }
 
