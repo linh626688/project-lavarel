@@ -8,80 +8,13 @@ use Validator;
 class FormController extends Controller
 {
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
+    //
     public function index()
     {
         $title = "Demo";
         return view('admin.forms', compact('title'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
-    public function store()
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
     public function add(PostRequest $request)
     {
         $v = Validator::make($request->all(), [
@@ -92,10 +25,10 @@ class FormController extends Controller
             'inputFile' => 'required',
         ],
             [
-                'inputNamhoc.required' => 'Vui L?ng Nh?p NÄƒm H?c',
+                'inputNamhoc.required' => 'Vui L?ng Nh?p Nãm H?c',
                 'inputHocki.required' => 'Vui L?ng Nh?p H?c K?',
-                'inputMamonhoc.required' => 'Vui L?ng Nh?p M? MÃ´n H?c',
-                'inputMonHoc.required' => 'Vui L?ng Nh?p TÃªn MÃ´n H?c',
+                'inputMamonhoc.required' => 'Vui L?ng Nh?p M? Môn H?c',
+                'inputMonHoc.required' => 'Vui L?ng Nh?p Tên Môn H?c',
                 'inputFile.required' => 'Vui L?ng Nh?p File',
 
             ]
@@ -120,5 +53,4 @@ class FormController extends Controller
 
         return redirect('/admin');
     }
-
 }

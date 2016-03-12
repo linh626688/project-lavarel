@@ -28,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a   href="index.html"><img src="/assets/img/uet-courses.png">
+                <a   href="#"><img src="/assets/img/uet-courses.png">
 
                 </a>
             </div>
@@ -40,10 +40,10 @@
                         <i class="fa fa-user-plus"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user-plus"></i> Thông tin cá nhân</a>
+                        <li><a href="{{ url('authentication/getRegister') }}"></i> Đăng kí tài khoản khác</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out"></i> Đăng xuất</a>
+                        <li><a href="http://localhost:8000/authentication/getLogin"><i class="fa fa-sign-out"></i> Đăng xuất </a>
                         </li>
                     </ul>
                 </li>
@@ -66,13 +66,13 @@
                         <a  href="#"> <strong > Nguyễn Việt Anh </strong></a>
                     </li>
                     <li>
-                        <a href="{{route('admin.table')}}"><i class="fa fa-bolt "></i>Bảng dữ liệu </a>
+                        <a href="{{route('add.index')}}"><i class="fa fa-bolt "></i>Bảng dữ liệu </a>
 
                     </li>
 
 
                      <li>
-                        <a href="{{route('admin.form')}}"><i class="fa fa-code "></i>Nhập điểm</a>
+                        <a href="{{route('add.create')}}"><i class="fa fa-code "></i>Nhập điểm</a>
                     </li>
                 </ul>
             </div>

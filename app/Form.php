@@ -6,5 +6,6 @@ class Form extends Model
 {
 
     protected $table = 'bangdiem';
-    // protected $filltable = ['id', 'year', 'season', 'idclass', 'subject', 'file'];
+    protected $filltable = ['year', 'season', 'idclass', 'subject', 'file'];
+    public $timestamps = false;
 }

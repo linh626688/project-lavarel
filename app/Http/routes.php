@@ -11,10 +11,10 @@
 |
  */
 
+// Route::get('/', 'WelcomeController@index');
+
 Route::get('/', 'WelcomeController@index');
-
 Route::get('home', 'HomeController@index');
-
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
@@ -24,22 +24,18 @@ Route::get('/test', function () {
 });
 Route::get('authentication/getRegister', ['as' => 'getRegister', 'uses' => 'Auth\AuthController@getRegister']);
 Route::post('authentication/postRegister', ['as' => 'postRegister', 'uses' => 'Auth\AuthController@postRegister']);
-
 Route::get('authentication/getLogin', ['as' => 'getLogin', 'uses' => 'Auth\AuthController@getLogin']);
 Route::post('authentication/postLogin', ['as' => 'postLogin', 'uses' => 'Auth\AuthController@postLogin']);
+Route::resource('search', 'SearchController');
 Route::resource('search', 'SearchController');
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('/form', ['as' => 'admin.form', 'uses' => "FormController@index"]);
-
     Route::post('post', ['as' => 'postDangKy', 'uses' => "FormController@add"]);
     Route::resource('year', 'YearController');
     Route::resource('season', 'SeasonController');
     Route::resource('class', 'ClassRoomController');
     Route::resource('subject', 'SubjectController');
-
-// Controllers Within The "App\Http\Controllers\Admin" Namespace
-
     Route::get('/table', ['as' => 'admin.table', 'uses' => "TableController@index"]);
 });
 Route::get('admin', 'AdminController@index');
@@ -49,4 +45,8 @@ Route::get('form/layout', function () {
 // Route::get('admin/form', ['as' => 'admin.form', 'uses' => "FormController@index"]);
 
 // Route::post('post', ['as' => 'postDangKy', 'uses' => "FormController@add"]);
-Route::any('{all?}', 'AdminController@index')->where('all', '.*');
+// Route::any('{all?}', 'AdminController@index')->where('all', '.*');
+// Route::get('/list', function () {
+//     return view('form.list');
+// });
+Route::resource('add', 'AddController');

@@ -9,45 +9,45 @@
 
                Nhập điểm
             </div>
-            <div class="panel-body">
-                <form enctype = "multipart/form-data" action="{!!  route('add.store') !!}" method="POST" name="create"  role="form">
+            <div  class="panel-body">
+                {!! Form::open(array('route'=>array('add.update',$data['id']),'files' => true,'method'=>'PUT')) !!}
                     <input name="_token" type="hidden" value="{!! csrf_token() !!}" />
                     <div class="form-group has-success">
                         <label class="control-label" for="success" >Năm học</label>
-                        <input type="text" class="form-control" id="success"  name = "inputNamhoc" placeholder="2015-2016"/>
-                        {!!$errors->first('inputNamhoc')!!}
+                        <input type="text" class="form-control" id="success"  name = "inputNamhoc" value="{!! old('inputNamhoc',isset($data) ? $data['year']:null)!!} "/>
+
                     </div>
                     <div class="form-group has-success">
                         <label class="control-label" for="warning"> Học kỳ </label>
-                        <input type="text" class="form-control" id="warning"  name = "inputHocki" placeholder="1"/>
-                         {!!$errors->first('inputHocki')!!}
+                        <input type="text" class="form-control" id="warning"  name = "inputHocki" value="{!! old('inputHocki',isset($data) ? $data['season']:null)!!} "/>
+
 
                     </div>
                     <div class="form-group has-success">
                         <label class="control-label" for="error">  Mã môn học</label>
-                        <input type="text" class="form-control" id="error" name = "inputMamonhoc" placeholder="INT12344"/>
-                         {!!$errors->first('inputMamonhoc')!!}
+                        <input type="text" class="form-control" id="error" name = "inputMamonhoc" value="{!! old('inputMamonhoc',isset($data) ? $data['idclass']:null)!!} "/>
+
 
                     </div>
                      <div class="form-group has-success">
                         <label class="control-label" for="error"> Lớp môn học </label>
-                        <input type="text" class="form-control" id="error" name = "inputMonHoc" placeholder="Mạng máy tính"/>
-                         {!!$errors->first('inputMonHoc')!!}
+                        <input type="text" class="form-control" id="error" name = "inputMonHoc" value="{!! old('inputMonHoc',isset($data) ? $data['subject']:null)!!} "/>
+
 
                     </div>
                     <div class="form-group has-success">
                         <label class="control-label" for="error"> Địa chỉ truy cập bảng điểm </label>
-                        <input type="file" class="form-control" id="error" name = "inputFile"
-                        placeholder="http://www.coltech.vnu.edu.vn/Contents/attach/cacvandehdcntt-int3507_6.pdf"/>
-                         {!!$errors->first('inputFile')!!}
+                        <input type="file" class="form-control" id="error" name = "inputFile" value="{!! old('inputFile',isset($data) ? $data['file']:null)!!} "
+                 />
+
 
                     </div>
                     <div>
                     <hr />
-                        <input type="submit" name="submit_name" class="btn btn-default" value="OK"/>
+                        <input type="submit" name="submit_name" class="btn btn-default" value="Sửa"/>
                     <br><br>
                     </div>
-                </form>
+                {!! Form::close() !!}
 
                 Chú ý: Giáo viên cần nhập đầy đủ thông tin
             </div>

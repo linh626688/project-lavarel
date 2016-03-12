@@ -1,0 +1,40 @@
+TIME     : 2016-03-07 16:48:27
+FILE     : 
+FUNCTION : 
+LINENUM  : 0
+DETAIL   : WorkThread ID : 7100
+
+
+TIME     : 2016-03-07 16:48:27
+FILE     : 
+FUNCTION : 
+LINENUM  : 0
+DETAIL   : WorkThread ID : 4800
+
+
+TIME     : 2016-03-07 16:48:27
+FILE     : 
+FUNCTION : 
+LINENUM  : 0
+DETAIL   : WorkThread ID : 5852
+
+
+TIME     : 2016-03-07 16:48:27
+FILE     : 
+FUNCTION : 
+LINENUM  : 0
+DETAIL   : WorkThread ID : 7420
+
+
+TIME     : 2016-03-07 16:48:58
+FILE     : RemoveSnapshot.cpp
+FUNCTION : CRemoveSnapshot::exec
+LINENUM  : 61
+DETAIL   : ErrorCode is "97". Detail : VB_ERR_GET_CUR_SNAPSHOT_FAILE
+
+TIME     : 2016-03-07 17:02:20
+FILE     : VBoxApi.cpp
+FUNCTION : VB_StopMachine
+LINENUM  : 375
+DETAIL   : ErrorCode is "8". Detail : VB_ERR_MACHINE_STOP_FAIL
+
