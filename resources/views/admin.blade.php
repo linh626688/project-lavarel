@@ -28,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a   href="#"><img src="/assets/img/uet-courses.png">
+                <a   href="http://localhost:8000/admin"><img src="/assets/img/uet-courses.png">
 
                 </a>
             </div>
@@ -63,7 +63,7 @@
 
                     </li>
                      <li>
-                        <a  href="#"> <strong > Nguyễn Việt Anh </strong></a>
+                        <a  href="admin"> <strong > Nguyễn Việt Anh </strong></a>
                     </li>
                     <li>
                         <a href="{{route('add.index')}}"><i class="fa fa-bolt "></i>Bảng dữ liệu </a>

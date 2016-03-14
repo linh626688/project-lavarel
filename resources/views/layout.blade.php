@@ -57,11 +57,14 @@
                     </li>
                 </ul>
                 <!-- TÌM KIẾM -->
-                <form class="nav navbar-nav" id="search">
-				<input type="text" placeholder="Tìm kiếm..." required>
-				<button type="submit">Tìm</button>
-				</form>
-				<p id="search"><a href="{{route('search.index')}}">Tìm kiếm nâng cao</a></p>
+
+                <form  class="nav navbar-nav" id="search" action="/search" method="POST">
+                    <input type="text"  name="q" placeholder="Search.."/>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <button type="submit">Search</button>
+                    </form>
+
+		<!--  -->
 				<!-- END TÌM KIẾM -->
             </div>
             <!-- /.navbar-collapse -->
@@ -73,6 +76,10 @@
     <div class ="container">
         @yield('content');
     </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </body>
     <!-- /.container -->
 
     <!-- jQuery -->

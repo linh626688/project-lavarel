@@ -45,11 +45,11 @@ class AddController extends Controller
             'inputFile' => 'required',
         ],
             [
-                'inputNamhoc.required' => 'Vui L?ng Nh?p Năm H?c',
-                'inputHocki.required' => 'Vui L?ng Nh?p H?c K?',
-                'inputMamonhoc.required' => 'Vui L?ng Nh?p M? Môn H?c',
-                'inputMonHoc.required' => 'Vui L?ng Nh?p Tên Môn H?c',
-                'inputFile.required' => 'Vui L?ng Nh?p File',
+                'inputNamhoc.required' => 'Vui Lòng Nhập Năm Học',
+                'inputHocki.required' => 'Vui Lòng Nhập Học Kỳ?',
+                'inputMamonhoc.required' => 'Vui Lòng Nhập Mã Môn Học ',
+                'inputMonHoc.required' => 'Vui Lòng Nhập Tên Môn Học',
+                'inputFile.required' => 'Vui Lòng Nhập File',
 
             ]
         );
@@ -106,17 +106,21 @@ class AddController extends Controller
     public function update($id, PostRequest $request)
     {
         $form = Form::find($id);
+
         $form->year = $request->inputNamhoc;
         $form->season = $request->inputHocki;
         $form->idclass = $request->inputMamonhoc;
         $form->subject = $request->inputMonHoc;
 
-        $file = $request->file('inputFile');
-        $des = 'public\upload\diem';
-        $fileupload = $file->getClientOriginalExtension();
-        $form->file = $fileupload;
+        if ($request->has('inputFile')) {
+            $file = $request->file('inputFile');
+            $des = 'public\upload\diem';
 
-        $file->move($des, $fileupload);
+            $fileupload = $file->getClientOriginalExtension();
+            $form->file = $fileupload;
+            $file->move($des, $fileupload);
+        }
+
         $form->save();
         return redirect('/add');
 

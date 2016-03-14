@@ -19,15 +19,21 @@ Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
-Route::get('/test', function () {
-    echo "string";
-});
+// Route::get('/test', function () {
+//     echo "string";
+// });
 Route::get('authentication/getRegister', ['as' => 'getRegister', 'uses' => 'Auth\AuthController@getRegister']);
 Route::post('authentication/postRegister', ['as' => 'postRegister', 'uses' => 'Auth\AuthController@postRegister']);
 Route::get('authentication/getLogin', ['as' => 'getLogin', 'uses' => 'Auth\AuthController@getLogin']);
 Route::post('authentication/postLogin', ['as' => 'postLogin', 'uses' => 'Auth\AuthController@postLogin']);
-Route::resource('search', 'SearchController');
-Route::resource('search', 'SearchController');
+// Route::resource('search', 'SearchController');
+// Route::post('layout', 'SearchController@basicSearch');
+
+// Route::get('getSearch', ['as' => 'getSearch', 'uses' => 'SearchController@getSearch']);
+// Route::post('postSearch', ['as' => 'postSearch', 'uses' => 'SearchController@postSearch']);
+// Route::get('testSearch', function () {
+//     return view('testSearch');
+// });
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('/form', ['as' => 'admin.form', 'uses' => "FormController@index"]);
@@ -50,3 +56,12 @@ Route::get('form/layout', function () {
 //     return view('form.list');
 // });
 Route::resource('add', 'AddController');
+Route::get('/search', 'SearchController@index');
+Route::post('/search', 'SearchController@result');
+
+Route::get('/search-custom', 'SearchCustomController@index');
+Route::post('/search-custom', 'SearchCustomController@result');
+
+Route::get('test', function () {
+    return view('index.index');
+});

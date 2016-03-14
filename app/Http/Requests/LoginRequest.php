@@ -31,8 +31,8 @@ class LoginRequest extends Request
     public function messages()
     {
         return [
-            'email.required' => 'Vui long nhap Email',
-            'password.required' => 'Vui long nhap Password',
+            'email.required' => 'Vui Lòng Nhập Email',
+            'password.required' => 'Vui Lòng Nhập Password',
 
         ];
     }

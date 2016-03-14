@@ -33,11 +33,11 @@ class RegisterRequest extends Request
     {
         return [
 
-            'name.required' => 'Vui Long Nhap Ho Ten',
-            'email.required' => 'Vui Long Nhap Email',
-            'email.email' => 'Day Khong Phai Email',
-            'email.unired' => 'Email da ton tai',
-            'password.required' => 'Vui Long Nhap Password',
+            'name.required' => 'Vui Lòng Nhập Họ Tên',
+            'email.required' => 'Vui Lòng Nhập Email',
+            'email.email' => 'Đây Không Phải là Email',
+            'email.unired' => 'Email đã tồn tại',
+            'password.required' => 'Vui Lòng Nhập Password',
         ];
     }
 

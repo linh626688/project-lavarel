@@ -10,14 +10,14 @@
 	            <!-- CHỌN HỌC KỲ -->
                 <div class="col-lg-6">
                 <div class="form-group">
-				  <label for="sel1">Chọn học kỳ: </label>
-				  <select class="form-control" id="sel1">
+				  <!-- <label for="sel1">Chọn học kỳ: </label> -->
+				  <<!-- select class="form-control" id="sel1">
 				  	<option>Tất cả</option>
 				    <option>Học kỳ 1 - Năm 2013-2014</option>
 				    <option>Học kỳ 2 - Năm 2013-2014</option>
 				    <option>Học kỳ 1 - Năm 2014-2015</option>
 				    <option>Học kỳ 2 - Năm 2014-2015</option>
-				  </select>
+				  </select> -->
 				</div>
 				</div>
 				<!-- END CHỌN HỌC KỲ -->

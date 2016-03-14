@@ -46,7 +46,7 @@
                 <td>{{$ds->season}}</td>
                 <td>{{$ds->idclass}}</td>
                 <td>{{$ds->subject}}</td>
-                <td>{{$ds->file}}</td>
+                <td><a href="{{ asset("public/upload/diem/$ds->file") }}">{{$ds->subject}}</a></td>
                 <th>
                   {!! Form::open(array('route'=>array('add.destroy',$ds -> id),'method'=>'DELETE')) !!}
                    <button onclick="return xacnhanxoa('Bạn Có Chắc Muốn Xóa Không')" type="submit" id="delete" class="btn btn-link">Xóa</button>
