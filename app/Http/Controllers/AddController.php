@@ -112,11 +112,11 @@ class AddController extends Controller
         $form->idclass = $request->inputMamonhoc;
         $form->subject = $request->inputMonHoc;
 
-        if ($request->has('inputFile')) {
+        if ($request->hasFile('inputFile')) {
             $file = $request->file('inputFile');
             $des = 'public\upload\diem';
 
-            $fileupload = $file->getClientOriginalExtension();
+            $fileupload = $file->getClientOriginalName();
             $form->file = $fileupload;
             $file->move($des, $fileupload);
         }

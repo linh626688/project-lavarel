@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand" href="http://localhost:8000/search">
                     <img src="img/uet-courses.png" alt="">
                 </a>
             </div>
@@ -63,6 +63,7 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <button type="submit">Search</button>
                     </form>
+                <p id="search"><a href="http://localhost:8000/search-custom">Tìm kiếm nâng cao</a></p>
 
 		<!--  -->
 				<!-- END TÌM KIẾM -->

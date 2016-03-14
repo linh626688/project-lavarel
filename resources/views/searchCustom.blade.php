@@ -10,28 +10,28 @@
 	            </div>
             </div>
             <!-- TÌM KIẾM NÂNG CAO -->
-            <form class="form-inline" action="/search" method="POST">
-          <div class="form-group">
-            <label for="exampleInputName2">Năm Học </label>
-            <input type="text" class="form-control" id="namhoc" placeholder="2009-2010">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail2">Học Kì</label>
-            <input type="text" class="form-control" id="hocki" placeholder="1">
-          </div>
-           <div class="form-group">
-            <label for="exampleInputEmail2">Mã Môn Học</label>
-            <input type="text" class="form-control" id="mamonhoc" placeholder="INT1234">
-          </div>
-           <div class="form-group">
-            <label for="exampleInputEmail2">Tên Môn Học</label>
-            <input type="text" class="form-control" id="tenmonhoc" placeholder="Mạng Máy Tính">
-          </div>
+            <form class="form-inline" action="/search-custom" method="POST">
+                <div class="form-group">
+                    <label for="exampleInputName2">Năm Học </label>
+                    <input type="text" class="form-control" name="namhoc" placeholder="2009-2010">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail2">Học Kì</label>
+                    <input type="text" class="form-control" name="hocki" placeholder="1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail2">Mã Môn Học</label>
+                    <input type="text" class="form-control" name="mamonhoc" placeholder="INT1234">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail2">Tên Môn Học</label>
+                    <input type="text" class="form-control" name="tenmonhoc" placeholder="Mạng Máy Tính">
+                </div>
 
-          <br><br>
-          <input type="hidden" name="_token" value="{{ csrf_token() }}">
-          <button type="submit" class="btn btn-primary">Tìm Kiếm Nâng Cao</button>
-        </form>
+                <br><br>
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <button type="submit" class="btn btn-primary">Tìm Kiếm Nâng Cao</button>
+            </form>
             <!-- END TÌM KIẾM NÂNG CAO -->
 
             <!-- KẾT QUẢ TÌM KIẾM -->

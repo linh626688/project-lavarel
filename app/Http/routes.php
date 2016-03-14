@@ -35,16 +35,23 @@ Route::post('authentication/postLogin', ['as' => 'postLogin', 'uses' => 'Auth\Au
 //     return view('testSearch');
 // });
 
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
-    Route::get('/form', ['as' => 'admin.form', 'uses' => "FormController@index"]);
-    Route::post('post', ['as' => 'postDangKy', 'uses' => "FormController@add"]);
-    Route::resource('year', 'YearController');
-    Route::resource('season', 'SeasonController');
-    Route::resource('class', 'ClassRoomController');
-    Route::resource('subject', 'SubjectController');
-    Route::get('/table', ['as' => 'admin.table', 'uses' => "TableController@index"]);
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/');
 });
-Route::get('admin', 'AdminController@index');
+
+Route::get('/admin', ['middleware' => 'auth', 'uses' => 'AdminController@index']);
+// Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth'], function () {
+//     Route::get('/', 'AdminController@index');
+//     Route::get('/form', ['as' => 'admin.form', 'uses' => "FormController@index"]);
+//     Route::post('post', ['as' => 'postDangKy', 'uses' => "FormController@add"]);
+//     Route::resource('year', 'YearController');
+//     Route::resource('season', 'SeasonController');
+//     Route::resource('class', 'ClassRoomController');
+//     Route::resource('subject', 'SubjectController');
+//     Route::get('/table', ['as' => 'admin.table', 'uses' => "TableController@index"]);
+// });
+
 Route::get('form/layout', function () {
     return view('form.layouttest');
 });
