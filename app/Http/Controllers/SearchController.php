@@ -15,7 +15,7 @@ class SearchController extends Controller
     {
         $q = \Input::get('q');
         $students = Form::where(function ($query) use ($q) {
-            $query->where('year', 'like', "%" . $q . "%")->orWhere('subject', 'like', "%" . $q . "%");
+            $query->where('idclass', 'like', "%" . $q . "%")->orWhere('subject', 'like', "%" . $q . "%");
         })->get();
         return view('result')->with([
             'students' => $students,
